@@ -1,0 +1,19 @@
+{
+    "name": "liivur/voog-php-api",
+    "description": "Voog PHP API Client",
+    "type": "library",
+    "authors": [
+        {
+            "name": "sander",
+            "email": "sander@newtime.ee"
+        }
+    ],
+    "require": {
+        "php": ">=5.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "VoogApi\\": "src/"
+        }
+    }
+}
