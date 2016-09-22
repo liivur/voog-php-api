@@ -13,7 +13,9 @@
     },
     "autoload": {
         "psr-4": {
-            "VoogApi\\": "src/"
+            "VoogApi\\": "src/",
+            "VoogApi\\Exceptions\\": "src/exceptions",
+            "VoogApi\\Helpers\\": "src/helpers"
         }
     },
     "license": "MIT"
