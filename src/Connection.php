@@ -22,6 +22,12 @@ class Connection
 		return $this->_sendRequest($url);
 	}
 
+	public function getPageContents($pageId, $parameters = [])
+	{
+		$url = new Url("admin/api/pages/".$pageId."/contents", $parameters);
+		return $this->_sendRequest($url);
+	}
+
 	public function getPages($parameters)
 	{
 		$url = new Url("admin/api/pages", $parameters);

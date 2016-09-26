@@ -18,26 +18,29 @@ class Client
 		$this->_connection = new Connection($host, $token);
 	}
 
-	public function getPage($pageId, $params = [])
+	public function getPage($pageId, $parameters = [])
 	{
-		$parameters = array_merge(
-			[
-				'include_children' => 1,
-			],
-			$params
-		);
-		return $this->_connection->getPage($pageId, $parameters);
+		$defaultArgs = [
+			'include_children' => 1,
+		];
+		return $this->_connection->getPage($pageId, array_merge($defaultArgs, $parameters));
 	}
 
-	public function getPages($params = [])
+	public function getPageContents($pageId, $parameters = [])
 	{
-		$parameters = array_merge(
-			[
-				'page' => 1,
-				'per_page' => 250,
-			],
-			$params
-		);
-		return $this->_connection->getPages($parameters);
+		$defaultArgs = [
+			'page' => 1,
+			'per_page' => 250,
+		];
+		return $this->_connection->getPageContents($pageId, array_merge($defaultArgs, $parameters));
+	}
+
+	public function getPages($parameters = [])
+	{
+		$defaultArgs = [
+			'page' => 1,
+			'per_page' => 250,
+		];
+		return $this->_connection->getPages(array_merge($defaultArgs, $parameters));
 	}
 }
